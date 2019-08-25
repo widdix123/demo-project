@@ -212,3 +212,8 @@ Resources:
       Path: "/"
       Roles:
       - Ref: EC2InstanceProfileRole
+
+Outputs:
+  JeninsURL:
+    Description: The Jenkins URL for Demo
+    Value: !Join ['', ['http://', !GetAtt [EC2WebServer, PublicIp], ':8080']]
